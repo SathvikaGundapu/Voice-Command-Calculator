@@ -1,0 +1,282 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #141414);
+    margin: 0;
+    color: white;
+    position: relative; /* Ensure the blob can be positioned absolutely */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('WhatsApp.jpg');
+    background-size: cover; /* Ensures the image covers the entire element */
+    background-position: center; /* Centers the image within the element */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    opacity: 0.09; /* Adjust the opacity to your preference */
+    z-index: -1; /* Place the image behind other elements */
+}
+h1 {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* Increase the container width to give more space */
+}
+
+.calculator {
+    width: 400px; /* Increase the width */
+    height: 470px; /* Increase the height */
+    background: linear-gradient(135deg, #89F7FE, #3471FF);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 195, 255, 0.6), 0 0 40px rgba(0, 255, 149, 0.4);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 50px; /* Adjust the margin to move the calculator down */
+    margin-right: 50px;
+    position: relative;
+}
+
+.calculator #display {
+    width: 100%;
+    padding: 15px;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.calculator .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calculator .buttons button {
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.8); /* Neon button glow effect */
+}
+
+.calculator .buttons button:hover {
+    background-color: #7ea1c8;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Intensified glow on hover */
+}
+
+.calculator .buttons button:active {
+    background-color: #000000;
+    transform: translateY(2px);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+}
+
+.calculator .buttons button.voice-input {
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator .buttons button.voice-input i {
+    margin-right: 5px;
+}
+
+.help-center {
+    background-color: #f9f9f900;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    width: 250px;
+    color: rgb(255, 255, 255);
+    margin-left: 40px; /* Adjust the margin to move the help center to the left */
+    margin-top: 50px;
+}
+
+/* Neon Blob with Edges Styling */
+/* Neon Blob with Complex Edges and Frames Styling */
+.neon-blob {
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(45deg, #89F7FE, #3471FF);
+    border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%; /* More complex edges */
+    box-shadow: 0 0 20px rgba(0, 225, 255, 0.573), 0 0 40px rgba(0, 242, 255, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    animation: blobAnimation 1.5s infinite alternate; /* Adjusted speed for smoothness */
+}
+/* Line Sound Wave Effect */
+.sound-wave-lines {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    display: flex;
+    gap: 5px;
+    transform: translate(-50%, -50%);
+}
+
+.sound-wave-lines div {
+    width: 3px;
+    height: 20px;
+    background: linear-gradient(45deg, #00ff99, #00ccff); /* Neon gradient */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.5);
+    animation: soundWaveLine 1s infinite ease-in-out;
+}
+
+.sound-wave-lines div:nth-child(1) { animation-delay: 0s; }
+.sound-wave-lines div:nth-child(2) { animation-delay: 0.1s; }
+.sound-wave-lines div:nth-child(3) { animation-delay: 0.2s; }
+.sound-wave-lines div:nth-child(4) { animation-delay: 0.3s; }
+.sound-wave-lines div:nth-child(5) { animation-delay: 0.4s; }
+.sound-wave-lines div:nth-child(6) { animation-delay: 0.5s; }
+.sound-wave-lines div:nth-child(7) { animation-delay: 0.6s; }
+.sound-wave-lines div:nth-child(8) { animation-delay: 0.7s; }
+.sound-wave-lines div:nth-child(9) { animation-delay: 0.8s; }
+.sound-wave-lines div:nth-child(10) { animation-delay: 0.9s; }
+.sound-wave-lines div:nth-child(11) { animation-delay: 1s; }
+.sound-wave-lines div:nth-child(12) { animation-delay: 1.1s; }
+.sound-wave-lines div:nth-child(13) { animation-delay: 1.2s; }
+.sound-wave-lines div:nth-child(14) { animation-delay: 1.3s; }
+.sound-wave-lines div:nth-child(15) { animation-delay: 1.4s; }
+.sound-wave-lines div:nth-child(16) { animation-delay: 1.5s; }
+.sound-wave-lines div:nth-child(17) { animation-delay: 1.6s; }
+.sound-wave-lines div:nth-child(18) { animation-delay: 1.7s; }
+.sound-wave-lines div:nth-child(19) { animation-delay: 1.8s; }
+.sound-wave-lines div:nth-child(20) { animation-delay: 1.9s; }
+.sound-wave-lines div:nth-child(21) { animation-delay: 2s; }
+.sound-wave-lines div:nth-child(22) { animation-delay: 2.1s; }
+.sound-wave-lines div:nth-child(23) { animation-delay: 2.2s; }
+.sound-wave-lines div:nth-child(24) { animation-delay: 2.3s; }
+.sound-wave-lines div:nth-child(25) { animation-delay: 2.4s; }
+
+@keyframes blobAnimation {
+    0% {
+        border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+        border-radius: 50% 50% 40% 60% / 40% 60% 60% 40%;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    50% {
+        border-radius: 70% 30% 50% 50% / 50% 70% 30% 50%;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    75% {
+        border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes soundWaveLine {
+    0%, 100% {
+        height: 20px;
+    }
+    50% {
+        height: 40px;
+    }
+}
+
+/* Neon Glow Circle with Rotating Ball */
+.neon-glow-circle {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    width: 2.5cm; /* Adjust size as needed */
+    height: 2.5cm;
+    border: 5px solid #00f2ff;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 42, 255, 0.8);
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: glowCircle 0.5s infinite, waveCircle 2s infinite;
+}
+
+.glowing-ball {
+    width: 1.75cm;
+    height: 1.75cm;
+    background: linear-gradient(45deg, #2370ff, #00fff7);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    position: absolute;
+    animation: spinBall 1s  linear infinite, rotateAround 0.5s linear infinite;
+}
+
+@keyframes glowCircle {
+    0%, 100% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 50px rgba(0, 76, 255, 0.8);
+    }
+}
+@keyframes waveCircle {
+    0% {
+        border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+        border-radius: 50% 50% 40% 60% / 40% 60% 60% 40%;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    50% {
+        border-radius: 70% 30% 50% 50% / 50% 70% 30% 50%;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    75% {
+        border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        border-radius: 30% 70% 50% 50% / 50% 30% 70% 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes rotateAround {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinBall {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

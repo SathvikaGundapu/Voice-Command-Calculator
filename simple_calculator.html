@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Command Simple Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Add the neon blob div here -->
+    <div class="neon-blob"></div>
+    <div class="sound-wave-lines" style="display: none;">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="neon-glow-circle" style="display: none;">
+        <div class="glowing-ball"></div>
+    </div>
+    <h1>Voice Command Simple Calculator</h1>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+            <div class="buttons">
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('*')">x</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('00')">00</button>
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendToDisplay('/')">/</button>
+                <button class="voice-input" onclick="voiceInput()"><i class="fas fa-microphone"></i> Voice Input</button>
+                <button onclick="calculate()">=</button>
+            </div>
+        </div>
+        <div class="help-center">
+            <h2>Help Center</h2>
+            <p>Use these voice commands for operations:</p>
+            <ul>
+                <li><b>plus</b> - Addition (+)</li>
+                <li><b>minus</b> - Subtraction (-)</li>
+                <li><b>times</b> - Multiplication (*)</li>
+                <li><b>divided by</b> - Division (/)</li>
+            </ul>
+            <p>        NOTE :       it clears display automatically after 15s</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert("Speech Recognition API not supported!");
+            }
+        };
+    </script>
+</body>
+</html>
